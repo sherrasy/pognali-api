@@ -1,0 +1,9 @@
+{
+  "name": "cards-models",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/models/cards-models/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project cards-models --web",
+  "targets": {}
+}
