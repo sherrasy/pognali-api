@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+  pognali.cards.postgres:
+    image: postgres:14-alpine
+    container_name: pognali.cards.postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: pognali_cards
+    ports:
+      - 5432:5432
+    volumes:
+      - pognali.postgres.cards:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d test']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    networks:
+      - pognali.cards
+
+  pognali.cards.pgadmin:
+    image: dpage/pgadmin4
+    container_name: pognali.cards.pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'keks@htmlacademy.local'
+      PGADMIN_DEFAULT_PASSWORD: 'test'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - 8081:80
+    networks:
+      - pognali.cards
+
+volumes:
+  pognali.postgres.cards:
+
+networks:
+  pognali.cards:
+    driver: bridge

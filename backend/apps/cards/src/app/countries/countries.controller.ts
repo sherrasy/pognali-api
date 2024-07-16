@@ -1,0 +1,25 @@
+import { Controller, Get, HttpStatus, Query } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { AppPath, CARDS_MESSAGE, fillObject } from '@backend/util-core';
+import { CountryQuery } from '@backend/shared-queries';
+import { CountriesService } from './countries.service';
+import { CountryRdo } from './rdo/country.rdo';
+
+@ApiTags(AppPath.Countries)
+@Controller(AppPath.Countries)
+export class CountriesController {
+  constructor(private readonly countriesService: CountriesService) {}
+
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: CARDS_MESSAGE,
+    type:CountryRdo,
+  })
+  
+  @Get()
+  public async showCountries(@Query() query: CountryQuery) {
+    const apartments = await this.countriesService.showCountries(query);
+    return apartments.map((country) => fillObject(CountryRdo, country));
+  }
+
+}

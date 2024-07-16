@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@backend/cards-models": ["libs/models/cards-models/src/index.ts"],
+      "@backend/shared-queries": ["libs/shared/shared-queries/src/index.ts"],
       "@backend/shared-types": ["libs/shared/shared-types/src/index.ts"],
       "@backend/util-core": ["libs/util/util-core/src/index.ts"]
     }
