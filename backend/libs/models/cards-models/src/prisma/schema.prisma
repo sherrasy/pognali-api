@@ -19,3 +19,20 @@ model Country {
 
   @@map("countries")
 }
+
+model Card {
+  id            Int      @id @default(autoincrement()) @map("card_id")
+  name          String
+  photo         String
+  places        Int[]
+  tags          String[]
+  transport     String[]
+  level         Int
+  people        Int
+  duration      Int
+  dateStart     String
+  dateEnd       String
+  entertainment String[]
+
+  @@map("cards")
+}
