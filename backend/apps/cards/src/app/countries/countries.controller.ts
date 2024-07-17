@@ -15,11 +15,11 @@ export class CountriesController {
     description: CARDS_MESSAGE,
     type:CountryRdo,
   })
-  
+
   @Get()
   public async showCountries(@Query() query: CountryQuery) {
-    const apartments = await this.countriesService.showCountries(query);
-    return apartments.map((country) => fillObject(CountryRdo, country));
+    const countries = await this.countriesService.showCountries(query);
+    return countries.map((country) => fillObject(CountryRdo, country));
   }
 
 }

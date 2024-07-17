@@ -1,4 +1,5 @@
 export const CARDS_MESSAGE = 'Данные загружены';
+export const CARDS_AMOUNT = 4;
 
 export const DefaultParam = {
   Step: 1,

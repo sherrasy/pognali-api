@@ -1,5 +1,5 @@
 # Список стран
-GET http://localhost:3000/api/countries?letter=А,Я&region=asia HTTP/1.1
+GET http://localhost:3000/api/countries HTTP/1.1
 
 # Query params
 ## letter=А
