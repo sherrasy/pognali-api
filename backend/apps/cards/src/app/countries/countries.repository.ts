@@ -30,11 +30,10 @@ export class CountriesRepository {
     return countries;
   }
 
-  public async getCountriesForCards(ids:number[], region:string): Promise<Country[] | null>{
+  public async getCountriesForCards(ids:number[], region:string): Promise<number[]>{
     const queryParams = {
       where: {
         AND: {
-          id:{in:ids},
           region: { search: region },
         },
       },
@@ -45,6 +44,6 @@ export class CountriesRepository {
       ],
     };
     const countries = await this.prisma.country.findMany(queryParams);
-    return countries;
+    return countries.map(({id})=>id).concat(ids);
   }
 }

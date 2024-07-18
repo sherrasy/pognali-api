@@ -1,6 +1,8 @@
 # Список карточек
-GET http://localhost:3000/api/cards HTTP/1.1
+GET http://localhost:3000/api/cards?countryId=2,45&region=europe HTTP/1.1
 
 # Query params
-
+## countryId=1
+## region=europe
+## page=2
 ###
