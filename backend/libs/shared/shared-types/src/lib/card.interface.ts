@@ -1,5 +1,3 @@
-import { Country } from './country.interface';
-
 export type Transport = 'plane' | 'bus' | 'bycicle' | 'walking';
 export type Entertainment = {
   countryId: number;

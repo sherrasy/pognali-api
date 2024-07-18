@@ -1,8 +1,8 @@
+import { CardsQuery } from "@backend/shared-queries";
+import { Card } from "@backend/shared-types";
+import { CARDS_AMOUNT, DefaultParam } from "@backend/util-core";
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
-import { Card, Country } from "@backend/shared-types";
-import { CARDS_AMOUNT, DefaultParam } from "@backend/util-core";
-import { CardsQuery } from "@backend/shared-queries";
 
 @Injectable()
 export class CardsRepository {

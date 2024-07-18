@@ -1,7 +1,5 @@
-import { Entertainment } from '@backend/shared-types';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
-import { CountryRdo } from '../../countries/rdo/country.rdo';
 
 export class CardRdo {
   @ApiProperty({
@@ -27,7 +25,7 @@ export class CardRdo {
 
   @ApiProperty({
     description: 'Страны которые хочет посетить',
-    example: '',
+    example: [1,65],
   })
   @Expose()
   public places: number[];

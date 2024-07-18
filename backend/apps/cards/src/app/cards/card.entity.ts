@@ -1,4 +1,4 @@
-import { Card, Country, Transport,Entertainment } from "@backend/shared-types";
+import { Card } from "@backend/shared-types";
 
 export class CardEntity implements Card {
   public _id?: number;

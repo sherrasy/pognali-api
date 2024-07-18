@@ -1,4 +1,4 @@
-import {Country} from '@backend/shared-types'
+import { Country } from '@backend/shared-types';
 export class CountryEntity implements Country {
   public id?: number;
   public name: string;

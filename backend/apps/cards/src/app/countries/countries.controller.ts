@@ -1,7 +1,7 @@
+import { CountryQuery } from '@backend/shared-queries';
+import { AppPath, CARDS_MESSAGE, fillObject } from '@backend/util-core';
 import { Controller, Get, HttpStatus, Query } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { AppPath, CARDS_MESSAGE, fillObject } from '@backend/util-core';
-import { CountryQuery } from '@backend/shared-queries';
 import { CountriesService } from './countries.service';
 import { CountryRdo } from './rdo/country.rdo';
 

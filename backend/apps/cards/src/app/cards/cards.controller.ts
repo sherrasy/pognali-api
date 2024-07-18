@@ -1,9 +1,9 @@
+import { CardsQuery } from '@backend/shared-queries';
 import { AppPath, CARDS_MESSAGE, fillObject } from '@backend/util-core';
 import { Controller, Get, HttpStatus, Query } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CardsService } from './cards.service';
 import { CardRdo } from './rdo/card.rdo';
-import { CardsQuery } from '@backend/shared-queries';
 
 @ApiTags(AppPath.Cards)
 @Controller(AppPath.Cards)

@@ -1,8 +1,8 @@
+import { CountryQuery } from '@backend/shared-queries';
+import { Country } from '@backend/shared-types';
+import { SortOrder } from '@backend/util-core';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { Country } from '@backend/shared-types';
-import { CountryQuery } from '@backend/shared-queries';
-import { SortOrder } from '@backend/util-core';
 
 @Injectable()
 export class CountriesRepository {
