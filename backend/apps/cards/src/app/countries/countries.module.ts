@@ -6,5 +6,6 @@ import { CountriesRepository } from './countries.repository';
 @Module({
   controllers: [CountriesController],
   providers: [CountriesService, CountriesRepository],
+  exports:[CountriesRepository]
 })
 export class CountriesModule {}

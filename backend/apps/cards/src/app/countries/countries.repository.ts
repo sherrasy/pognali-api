@@ -7,6 +7,7 @@ import { SortOrder } from '@backend/util-core';
 @Injectable()
 export class CountriesRepository {
   constructor(private readonly prisma: PrismaService) {}
+
   public async showCountries({
     letter,
     region,
@@ -18,11 +19,31 @@ export class CountriesRepository {
           region: { search: region },
         },
       },
-      orderBy: [{
-        name: SortOrder.asc,
-      },],
+      orderBy: [
+        {
+          name: SortOrder.asc,
+        },
+      ],
     };
 
+    const countries = await this.prisma.country.findMany(queryParams);
+    return countries;
+  }
+
+  public async getCountriesForCards(ids:number[], region:string): Promise<Country[] | null>{
+    const queryParams = {
+      where: {
+        AND: {
+          id:{in:ids},
+          region: { search: region },
+        },
+      },
+      orderBy: [
+        {
+          name: SortOrder.asc,
+        },
+      ],
+    };
     const countries = await this.prisma.country.findMany(queryParams);
     return countries;
   }
