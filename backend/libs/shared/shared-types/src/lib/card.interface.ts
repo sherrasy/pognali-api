@@ -20,8 +20,3 @@ export interface Card {
   dateEnd: string;
   entertainment: string[];
 }
-
-export interface CardApi {
-  picture: { large: string };
-  gender: string ;
-}
