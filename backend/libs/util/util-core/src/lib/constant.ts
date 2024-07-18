@@ -19,3 +19,8 @@ export const AppPath = {
   Cards: 'cards',
   Countries: 'countries',
 } as const;
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const;
