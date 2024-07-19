@@ -43,7 +43,7 @@ export const getPerson = async () => {
   const name = `${getRandomItem(isMan ? mockData.names.male : mockData.names.female)} ${getRandomItem(mockData.names.lastnames)}${isMan ? '' : 'a'}`;
   const places = Array.from({ length: getRandomValue(1, 4) }, () => getRandomValue(COUNTRIES_START, COUNTRIES_START + 185));
   const photo:string = await axios.get(`${PHOTO_LINK}/search/photos?query=${gender}&client_id=${CLIENT_ID}&per_page=15`).then((res)=>res.data.results[getRandomValue(0,14)].urls.small);
-  const tags = getRandomItems(mockData.tags);
+  const tags = getRandomItems(mockData.tags).toString();
   const transport = getRandomItems(mockData.transport);
   const level = getRandomValue(0, 100);
   const people = getRandomValue(1, 10);

@@ -1,8 +1,28 @@
 # Список карточек
-GET http://localhost:3000/api/cards?countryId=2,45&region=europe HTTP/1.1
+GET http://localhost:3000/api/cards?page=5 HTTP/1.1
 
 # Query params
 ## countryId=1
 ## region=europe
 ## page=2
+###
+
+# Список квартир по типу
+POST  http://localhost:3000/api/cards/add HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Татьяна Ивановa",
+  "photo": "//randomuser.me/api/portraits/women/83.jpg",
+  "level":80,
+  "places":[2,43],
+  "tags":"#отдых #пляж",
+  "transport":["plane"],
+  "people":2,
+  "duration":2,
+  "dateStart":"2024-07-14T20:00:00.000Z",
+  "dateEnd":"2024-07-16T20:00:00.000Z",
+  "entertainment":[{"countryId":2, "text":"Cпортивный фестиваль"}, {"countryId":43, "text":"Бар, концерт"}]
+}
+
 ###

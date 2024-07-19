@@ -5,7 +5,7 @@ export class CardEntity implements Card {
   public name: string;
   public photo: string;
   public places: number[];
-  public tags?: string[];
+  public tags?: string;
   public transport: string[];
   public level: number;
   public people:number;

@@ -1,4 +1,3 @@
-export type Transport = 'plane' | 'bus' | 'bycicle' | 'walking';
 export type Entertainment = {
   countryId: number;
   text: string;
@@ -9,7 +8,7 @@ export interface Card {
   name: string;
   photo: string;
   places: number[];
-  tags?: string[];
+  tags?: string;
   transport: string[];
   level: number;
   people: number;
