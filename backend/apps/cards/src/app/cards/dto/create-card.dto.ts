@@ -91,5 +91,5 @@ export class CreateCardDto {
   })
   @Transform(({value})=>value.map(({countryId, text})=>`${countryId}, ${text}`))
   @IsArray()
-  public entertainment:Entertainment[];
+  public entertainment:string[];
 }

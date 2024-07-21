@@ -17,7 +17,7 @@ export class CardsController {
   })
 
   @Get()
-  public async showCards(@Query() query: CardsQuery) {
+  public async showCards(@Query() query?: CardsQuery) {
     const cards = await this.cardsService.showCards(query);
     const pagesTotal = await this.cardsService.getPages();
     return {cards: cards.map((card) => fillObject(CardRdo, card)), pagesTotal};
@@ -33,7 +33,8 @@ export class CardsController {
   })
   @Post(AppPath.Add)
   public async showFilteredApartments(@Body() dto: CreateCardDto) {
-    console.log(dto);
+    await this.cardsService.createCard(dto);
+    return await this.showCards({})
   }
 
 }

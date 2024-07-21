@@ -1,8 +1,9 @@
 import { CardsQuery } from "@backend/shared-queries";
 import { Card } from "@backend/shared-types";
-import { CARDS_AMOUNT, DefaultParam } from "@backend/util-core";
+import { CARDS_AMOUNT, DefaultParam, SortOrder } from "@backend/util-core";
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
+import { CardEntity } from "./card.entity";
 
 @Injectable()
 export class CardsRepository {
@@ -13,6 +14,7 @@ export class CardsRepository {
           places: undefined,
       },
       take: CARDS_AMOUNT,
+      orderBy: [{ id: SortOrder.desc }],
       skip:
         page > DefaultParam.Amount
           ? CARDS_AMOUNT * (page - DefaultParam.Step)
@@ -31,7 +33,7 @@ export class CardsRepository {
     return pages;
   }
 
-  // public async createCard({letter, region}: Query): Promise<Card[] | null> {
-
-  // }
+  public async createCard(data: CardEntity): Promise<Card> {
+    return await this.prisma.card.create({data});
+  }
 }
