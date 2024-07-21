@@ -8,14 +8,26 @@ export const DefaultParam = {
 };
 
 export const RegionToName = {
-  Europe : 'Европа',
+  Europe: 'Европа',
   Americas: 'Америка',
   Oceania: 'Острова',
-  Asia : 'Азия',
+  Asia: 'Азия',
 };
-
 
 export const AppPath = {
   Cards: 'cards',
+  Add: 'add',
   Countries: 'countries',
+} as const;
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc',
+} as const;
+
+export const Transport = {
+  plane: 'plane',
+  bus: 'bus',
+  bycicle: 'bycicle',
+  walking: 'walking',
 } as const;

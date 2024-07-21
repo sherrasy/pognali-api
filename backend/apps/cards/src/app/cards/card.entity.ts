@@ -1,11 +1,11 @@
-import { Card, Country, Transport,Entertainment } from "@backend/shared-types";
+import { Card } from "@backend/shared-types";
 
 export class CardEntity implements Card {
   public _id?: number;
   public name: string;
   public photo: string;
   public places: number[];
-  public tags?: string[];
+  public tags?: string;
   public transport: string[];
   public level: number;
   public people:number;

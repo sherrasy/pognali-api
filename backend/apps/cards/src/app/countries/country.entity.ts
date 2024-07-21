@@ -1,6 +1,6 @@
-import {Country} from '@backend/shared-types'
+import { Country } from '@backend/shared-types';
 export class CountryEntity implements Country {
-  public _id?: number;
+  public id?: number;
   public name: string;
   public flag: string;
   public region: string;
@@ -16,7 +16,7 @@ export class CountryEntity implements Country {
   }
 
   public fillEntity(country: Country) {
-    this._id = country._id;
+    this.id = country.id;
     this.name = country.name;
     this.flag = country.flag;
     this.region = country.region;
