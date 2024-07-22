@@ -1,5 +1,6 @@
 import { CountryApi } from '@backend/shared-types';
 import axios from 'axios';
+import { v6 as uuidv6 } from 'uuid';
 
 const mockData = {
   regions: ['Europe', 'Americas', 'Oceania', 'Asia'],
@@ -51,6 +52,7 @@ export const getPerson = async () => {
   const dateStart = new Date(2024, 6, 15).toISOString();
   const dateEnd = new Date(2024, 6, 17).toISOString();
   const entertainment = Array.from({ length: places.length }, (_, i) => `${places[i]}, ${getRandomItems(mockData.tags)}`);
+  const token = uuidv6();
   return {
     name,
     photo,
@@ -63,6 +65,7 @@ export const getPerson = async () => {
     dateStart,
     dateEnd,
     entertainment,
+    token
   };
 }
 

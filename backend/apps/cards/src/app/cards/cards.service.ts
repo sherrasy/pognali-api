@@ -5,6 +5,7 @@ import { CardsQuery } from '@backend/shared-queries';
 import { CountriesRepository } from '../countries/countries.repository';
 import { CreateCardDto } from './dto/create-card.dto';
 import { CardEntity } from './card.entity';
+import { v6 as uuidv6 } from 'uuid';
 
 @Injectable()
 export class CardsService {
@@ -29,7 +30,8 @@ export class CardsService {
   }
 
   public async createCard(dto: CreateCardDto) {
-    const data = new CardEntity(dto);
-    await this.cardsRepository.createCard(data);
+    const token = dto.token ? dto.token : uuidv6();
+    const data = new CardEntity({...dto, token});
+    return await this.cardsRepository.createCard(data);
   }
 }

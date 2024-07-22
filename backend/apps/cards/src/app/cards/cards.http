@@ -7,13 +7,13 @@ GET http://localhost:3000/api/cards HTTP/1.1
 ## page=2
 ###
 
-# Список квартир по типу
+# Создать карточку
 POST  http://localhost:3000/api/cards/add HTTP/1.1
 Content-Type: application/json
 
 {
   "name": "Татьяна Ивановa",
-  "photo": "//randomuser.me/api/portraits/women/83.jpg",
+  "photo": "https://randomuser.me/api/portraits/women/83.jpg",
   "level":80,
   "places":[2,43],
   "tags":"#отдых #пляж",
