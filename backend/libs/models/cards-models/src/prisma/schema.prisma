@@ -33,6 +33,7 @@ model Card {
   dateStart     String
   dateEnd       String
   entertainment String[]
+  token         String
 
   @@map("cards")
 }

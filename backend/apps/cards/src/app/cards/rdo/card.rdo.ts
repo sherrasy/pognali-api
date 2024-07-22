@@ -10,6 +10,13 @@ export class CardRdo {
   public id: number;
 
   @ApiProperty({
+    description: 'Токен пользователя',
+    example: 1,
+  })
+  @Expose()
+  public token: string;
+
+  @ApiProperty({
     description: 'Имя пользователя',
     example: 'Татьяна',
   })

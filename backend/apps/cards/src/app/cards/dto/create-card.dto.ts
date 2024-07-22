@@ -1,8 +1,7 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { IsArray, IsIn, IsInt, IsNumber, IsObject, IsString, Max, Min, ValidateNested,  } from "class-validator";
 import { Transport } from "@backend/util-core";
-import { Transform, Type } from "class-transformer";
-import { Entertainment } from "@backend/shared-types";
+import { ApiProperty } from "@nestjs/swagger";
+import { Transform } from "class-transformer";
+import { IsArray, IsIn, IsInt, IsNumber, IsOptional, IsString, Max, Min } from "class-validator";
 
 export class CreateCardDto {
   @ApiProperty({
@@ -37,9 +36,11 @@ export class CreateCardDto {
 
   @ApiProperty({
     description: 'Тэги',
-    example:'#отдых #пляж'
+    example:'#отдых #пляж',
+    required:false
   })
   @IsString()
+  @IsOptional()
   public tags?: string;
 
   @ApiProperty({
@@ -92,4 +93,13 @@ export class CreateCardDto {
   @Transform(({value})=>value.map(({countryId, text})=>`${countryId}, ${text}`))
   @IsArray()
   public entertainment:string[];
+
+  @ApiProperty({
+    description: 'Токен устройства (при наличии)',
+    example:"token",
+    required:false
+  })
+  @IsOptional()
+  @IsString()
+  public token?:string;
 }

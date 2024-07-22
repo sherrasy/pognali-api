@@ -2,6 +2,7 @@ import { Card } from "@backend/shared-types";
 
 export class CardEntity implements Card {
   public _id?: number;
+  public token: string;
   public name: string;
   public photo: string;
   public places: number[];
@@ -25,6 +26,7 @@ export class CardEntity implements Card {
 
   public fillEntity(card: Card) {
     this._id = card._id;
+    this.token = card.token;
     this.name = card.name;
     this.photo = card.photo;
     this.places = card.places;

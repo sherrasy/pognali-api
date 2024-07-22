@@ -5,6 +5,7 @@ export type Entertainment = {
 
 export interface Card {
   _id?: number;
+  token: string;
   name: string;
   photo: string;
   places: number[];
