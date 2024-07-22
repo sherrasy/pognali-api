@@ -1,11 +1,12 @@
-import { Transform } from 'class-transformer';
-import { IsArray, IsInt, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
+import { IsOptional } from 'class-validator';
 
 export class CardsQuery {
   @ApiProperty({
     description: 'Страна сортировки. countryId=1 или countryId=1,2',
     required: false,
+    type:'string',
     example:"1"
   })
   @Transform(({ value }) => value.split(',').map(Number))
