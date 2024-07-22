@@ -33,7 +33,6 @@ export class CreateCardDto {
   @IsNumber({},{each:true})
   public places: number[];
 
-
   @ApiProperty({
     description: 'Тэги',
     example:'#отдых #пляж',

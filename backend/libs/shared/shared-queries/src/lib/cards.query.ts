@@ -6,7 +6,7 @@ export class CardsQuery {
   @ApiProperty({
     description: 'Страна сортировки. countryId=1 или countryId=1,2',
     required: false,
-    example:["1"]
+    example:"1"
   })
   @Transform(({ value }) => value.split(',').map(Number))
   @IsOptional()
