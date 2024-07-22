@@ -18,9 +18,8 @@ export class CardsController {
 
   @Get()
   public async showCards(@Query() query?: CardsQuery, token?:string) {
-    const cards = await this.cardsService.showCards(query);
-    const pagesTotal = await this.cardsService.getPages();
-    return {cards: cards.map((card) => fillObject(CardRdo, card)), pagesTotal, token};
+    const {cards, pages} = await this.cardsService.showCards(query);
+    return {cards: cards.map((card) => fillObject(CardRdo, card)), pagesTotal:pages, token};
   }
 
   @ApiResponse({

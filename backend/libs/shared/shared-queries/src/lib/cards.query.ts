@@ -1,21 +1,21 @@
 import { Transform } from 'class-transformer';
-import { IsOptional } from 'class-validator';
+import { IsArray, IsInt, IsOptional } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CardsQuery {
   @ApiProperty({
-    description: 'Страна сортировки. ',
+    description: 'Страна сортировки. countryId=1 или countryId=1,2',
     required: false,
-    example:'countryId=1 или countryId=1,2'
+    example:["1"]
   })
   @Transform(({ value }) => value.split(',').map(Number))
   @IsOptional()
   public countryId?: number[];
 
   @ApiProperty({
-    description: 'Регион (континент) сортировки, чтобы показать по всем странам определенного региона.',
+    description: 'Регион (континент) сортировки, чтобы показать по всем странам определенного региона. region=europe или region=europe,asia',
     required: false,
-    example:'region=europe или region=europe,asia'
+    example:'europe'
   })
   @Transform(({ value }) => value.split(',').join('|'))
   @IsOptional()
