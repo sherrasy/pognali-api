@@ -17,7 +17,7 @@ export class CardsService {
 
   public async showCards(query: CardsQuery): Promise<CardData> {
     const countriesData =
-     ( query.countryId || query.region)
+      ( query.countryId || query.region)
         ? await this.countriesRepository.getCountriesForCards(
             query.region, query.countryId,
           )
