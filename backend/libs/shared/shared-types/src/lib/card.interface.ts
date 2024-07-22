@@ -3,6 +3,11 @@ export type Entertainment = {
   text: string;
 };
 
+export interface CardData{
+  cards:Card[],
+  pages:number
+}
+
 export interface Card {
   _id?: number;
   token: string;
